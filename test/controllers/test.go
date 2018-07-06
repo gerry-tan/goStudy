@@ -138,8 +138,8 @@ func (c *TestController) GetAll() {
 // @router /:id [put]
 func (c *TestController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
-	id, _ := strconv.Atoi(idStr)
-	v := models.Test{Id: id}
+	id_, _ := strconv.Atoi(idStr)
+	v := models.Test{Id: id_}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 		if err := models.UpdateTestById(&v); err == nil {
 			c.Data["json"] = "OK"

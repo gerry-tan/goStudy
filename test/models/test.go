@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
-	"time"
-
 	"github.com/astaxie/beego/orm"
 )
 
 type Test struct {
-	Id int       `orm:"column(id);pk"`
-	Dt time.Time `orm:"column(dt);type(datetime);null"`
+	Id     int    `orm:"column(id);pk"`
+	Name   string `orm:"column(name);type(varchar);null"`
+	Age    int    `orm:"column(age);type(int)"`
+	Height int    `orm:"column(height);type(int)"`
 }
 
 func (t *Test) TableName() string {
-	return "test"
+	return "user"
 }
 
 func init() {

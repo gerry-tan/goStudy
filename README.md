@@ -1,12 +1,12 @@
-#Beego with Swagger UI
+# Beego with Swagger UI
 
-##安装
+## 安装
 * 安装 Go 和 Git 环境
 * 执行以下命令安装 beego 和 bee 工具：\
   $ go get -u github.com/astaxie/beego \
   $ go get -u github.com/beego/bee
 
-##创建项目
+## 创建项目
 * 通过jdbc创建Restful风格API项目 \
   $ go get github.com/Go-SQL-Driver/MySQL \
   $ go install github.com/Go-SQL-Driver/MySQL \
@@ -17,7 +17,7 @@
 * swagger 安装\
   $ bee run test -gendoc=true -downdoc=true
 
-##配置
+## 配置
 * conf/app.conf
   * 访问端口配置\
     httpport = 8080
@@ -36,10 +36,10 @@
 		),\
 	)
 
-##启动程序
+## 启动程序
 * $ bee run beegoTest -gendoc=true
 
-##Web页面
+## Web页面
 * swagger页面：
   http://localhost:8080/swagger/
 * manager页面：

@@ -131,10 +131,16 @@ definitions:
     title: Test
     type: object
     properties:
-      Dt:
+      Id:
+        type: integer
+        format: int64
+      Name:
         type: string
         format: string
-      Id:
+      Age:
+        type: integer
+        format: int64
+      Height:
         type: integer
         format: int64
 tags:

@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	orm.RegisterDataBase("default", "mysql", "root:Cango@1219@tcp(10.42.0.121:3306)/test")
+	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/test")
 }
 
 func main() {
