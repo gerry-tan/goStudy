@@ -45,4 +45,4 @@
 * manager页面：
   http://localhost:8088/qps
 * API访问地址：
-  http://localhost:8080/v1/test
+  http://localhost:8080/api/test
