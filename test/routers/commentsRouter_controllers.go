@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["test/controllers:TestController"] = append(beego.GlobalControllerRouter["test/controllers:TestController"],
+	beego.GlobalControllerRouter["test/controllers:UserController"] = append(beego.GlobalControllerRouter["test/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/`,
@@ -15,7 +15,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["test/controllers:TestController"] = append(beego.GlobalControllerRouter["test/controllers:TestController"],
+	beego.GlobalControllerRouter["test/controllers:UserController"] = append(beego.GlobalControllerRouter["test/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "GetAll",
 			Router: `/`,
@@ -23,7 +23,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["test/controllers:TestController"] = append(beego.GlobalControllerRouter["test/controllers:TestController"],
+	beego.GlobalControllerRouter["test/controllers:UserController"] = append(beego.GlobalControllerRouter["test/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "GetOne",
 			Router: `/:id`,
@@ -31,7 +31,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["test/controllers:TestController"] = append(beego.GlobalControllerRouter["test/controllers:TestController"],
+	beego.GlobalControllerRouter["test/controllers:UserController"] = append(beego.GlobalControllerRouter["test/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Put",
 			Router: `/:id`,
@@ -39,7 +39,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["test/controllers:TestController"] = append(beego.GlobalControllerRouter["test/controllers:TestController"],
+	beego.GlobalControllerRouter["test/controllers:UserController"] = append(beego.GlobalControllerRouter["test/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Delete",
 			Router: `/:id`,

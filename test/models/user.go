@@ -8,46 +8,46 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type Test struct {
+type User struct {
 	Id     int    `orm:"column(id);pk"`
 	Name   string `orm:"column(name);type(varchar);null"`
 	Age    int    `orm:"column(age);type(int)"`
 	Height int    `orm:"column(height);type(int)"`
 }
 
-func (t *Test) TableName() string {
+func (t *User) TableName() string {
 	return "user"
 }
 
 func init() {
-	orm.RegisterModel(new(Test))
+	orm.RegisterModel(new(User))
 }
 
-// AddTest insert a new Test into database and returns
+// AddUser insert a new User into database and returns
 // last inserted Id on success.
-func AddTest(m *Test) (id int64, err error) {
+func AddUser(m *User) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetTestById retrieves Test by Id. Returns error if
+// GetUserById retrieves User by Id. Returns error if
 // Id doesn't exist
-func GetTestById(id int) (v *Test, err error) {
+func GetUserById(id int) (v *User, err error) {
 	o := orm.NewOrm()
-	v = &Test{Id: id}
+	v = &User{Id: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllTest retrieves all Test matches certain condition. Returns empty list if
+// GetAllUser retrieves all User matches certain condition. Returns empty list if
 // no records exist
-func GetAllTest(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllUser(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(Test))
+	qs := o.QueryTable(new(User))
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
@@ -97,7 +97,7 @@ func GetAllTest(query map[string]string, fields []string, sortby []string, order
 		}
 	}
 
-	var l []Test
+	var l []User
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -120,11 +120,11 @@ func GetAllTest(query map[string]string, fields []string, sortby []string, order
 	return nil, err
 }
 
-// UpdateTest updates Test by Id and returns error if
+// UpdateUser updates User by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateTestById(m *Test) (err error) {
+func UpdateUserById(m *User) (err error) {
 	o := orm.NewOrm()
-	v := Test{Id: m.Id}
+	v := User{Id: m.Id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
@@ -135,15 +135,15 @@ func UpdateTestById(m *Test) (err error) {
 	return
 }
 
-// DeleteTest deletes Test by Id and returns error if
+// DeleteUser deletes User by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteTest(id int) (err error) {
+func DeleteUser(id int) (err error) {
 	o := orm.NewOrm()
-	v := Test{Id: id}
+	v := User{Id: id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&Test{Id: id}); err == nil {
+		if num, err = o.Delete(&User{Id: id}); err == nil {
 			fmt.Println("Number of records deleted in database:", num)
 		}
 	}
