@@ -32,7 +32,7 @@ func write(path, data string) {
 }
 
 func main() {
-	path := "files/test.txt"
+	path := "/Users/tanqian/go/src/goStudy/files/test.txt"
 	data := read(path)
-	write("files/test2.txt", data)
+	write("/Users/tanqian/go/src/goStudy/files/test2.txt", data)
 }
